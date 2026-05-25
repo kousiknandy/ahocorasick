@@ -1,0 +1,10 @@
+Aho–Corasick algorithm
+String-searching algorithm
+
+In computer science, the Aho–Corasick algorithm is a string-searching algorithm invented by Alfred V. Aho and Margaret J. Corasick in 1975.[1] It is a kind of dictionary-matching algorithm that locates elements of a finite set of strings (the "dictionary") within an input text. It matches all strings simultaneously. The complexity of the algorithm is linear in the length of the strings plus the length of the searched text plus the number of output matches. Because all matches are found, multiple matches will be returned for one string location if multiple strings from the dictionary match at that location (e.g. dictionary = a, aa, aaa, aaaa and input string is aaaa).
+
+Informally, the algorithm creates a trie using the strings in the dictionary and then constructs a finite-state machine from the trie by adding additional links between the nodes. These extra links allow fast transitions between failed string matches (e.g. a search for cart in a trie that does not contain cart, but contains art, and thus would fail at the node prefixed by car), to other branches of the trie that share a common suffix (e.g., in the previous case, a branch for attribute might be the best lateral transition). This allows the automaton to transition between string matches without the need for backtracking.
+
+When the string dictionary is known in advance (e.g. a computer virus database), the construction of the automaton can be performed once off-line and the compiled automaton stored for later use. In this case, its run time is linear in the length of the input plus the number of matched entries.
+
+The Aho—Corasick string-matching algorithm formed the basis of the original Unix command fgrep.
